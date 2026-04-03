@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, Folder, User } from "lucide-react";
 import type { Article } from "@/domain/types";
+import CommentsSection from "@/presentation/components/CommentsSection";
 
 interface ArticleViewProps {
   article: Article;
@@ -77,6 +78,8 @@ const ArticleView = ({ article, onBack }: ArticleViewProps) => {
           })
         )}
       </div>
+
+      <CommentsSection articleId={article.id} />
     </motion.div>
   );
 };
