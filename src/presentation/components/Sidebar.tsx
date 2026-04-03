@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Home, Layers, Tag, Archive, User, X, UserRound } from "lucide-react";
+import { Home, Layers, Tag, Archive, User, UserRound } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { getSiteConfig } from "@/infrastructure/config/loadConfig";
 
@@ -14,21 +14,13 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-const Sidebar = ({ activeSection, onNavigate, isOpen, onClose }: SidebarProps) => {
+const Sidebar = ({ activeSection, onNavigate }: SidebarProps) => {
   return (
     <motion.aside
       initial={false}
       animate={{ x: 0 }}
-      className={`fixed left-0 top-0 h-screen w-60 bg-sidebar border-r border-sidebar-border flex flex-col z-40 transition-transform duration-300 ease-out ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      } lg:translate-x-0`}
+      className="hidden lg:flex fixed left-0 top-0 h-screen w-60 bg-sidebar border-r border-sidebar-border flex-col z-40"
     >
-      <button
-        onClick={onClose}
-        className="lg:hidden absolute top-4 right-4 text-sidebar-foreground hover:text-foreground transition-colors"
-      >
-        <X size={18} strokeWidth={1.5} />
-      </button>
 
       <div className="p-6 flex flex-col items-center border-b border-sidebar-border">
         <motion.div
