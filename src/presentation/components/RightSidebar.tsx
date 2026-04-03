@@ -19,7 +19,7 @@ const RightSidebar = ({ searchQuery, onSearchChange, articles }: RightSidebarPro
       initial={{ x: 40, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-      className="hidden xl:block w-64 shrink-0"
+      className="hidden sm:block w-56 lg:w-64 shrink-0"
     >
       <div className="relative mb-8">
         <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" strokeWidth={1.5} />
